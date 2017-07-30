@@ -1,0 +1,25 @@
+<h1>Put the questions and options here:</h1>
+<a [routerLink]="['/dashboard']">Cancel</a>
+<hr>
+<form (submit)="create()" #formData="ngForm">
+    <p>Question:
+        <input type="text" name="question" [(ngModel)]="ques.question" required minlength="8">
+    </p>
+    <p>
+        Option 1:
+        <input type="text" name="o1" [(ngModel)]="ques.optionone" required minlength="3">
+    </p>
+    <p>
+        Option 2:
+        <input type="text" name="o2" [(ngModel)]="ques.optiontwo" required minlength="3">
+    </p>
+    <p>
+        Option 3:
+        <input type="text" name="o3" [(ngModel)]="ques.optionthree" required minlength="3">
+    </p>
+    <p>
+        Option 4:
+        <input type="text" name="o4" [(ngModel)]="ques.optionfour" required minlength="3">
+    </p>
+    <button type="submit" [disabled]="!formData.valid">Create Poll</button>
+</form>
